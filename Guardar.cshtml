@@ -1,0 +1,35 @@
+﻿@model ContactoModel
+
+@{
+    ViewData["Title"] = "Guardar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+  <div class="card-header">
+    Ingresa una pelicula
+  </div>
+  <div class="card-body">
+    
+      <form asp-action="Guardar" asp-controller="Mantenedor" method="post">
+          <div class="mb-3">
+            <label class="form-label">Pelicula</label>
+            <input asp-for="Pelicula" type="text" class="form-control">
+            <span asp-validation-for="Pelicula" class="text-danger"></span>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Categoria</label>
+            <input asp-for="Categoria" type="text" class="form-control">
+            <span asp-validation-for="Categoria" class="text-danger"></span>
+          </div>
+           <div class="mb-3">
+            <label class="form-label">Actor</label>
+            <input asp-for="Actor" type="text" class="form-control">
+            <span asp-validation-for="Actor" class="text-danger"></span>
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <a asp-action="Listar" asp-controller="Mantenedor" class="btn btn-warning">Volver a la vista</a>
+      </form>
+
+  </div>
+</div>
